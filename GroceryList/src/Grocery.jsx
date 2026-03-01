@@ -2,9 +2,13 @@ import './App.css';
 import { useState } from 'react';
 
 const Grocery =  () => {
+    // STATE HOOKS
     const [item, typeItem] = useState('');
     const [list, setList] = useState([]);
     const [newId, giveNewId] = useState(1);
+
+    // EVENT HANDLERS
+    // Add a new item
     const handleSubmission = (e) => {
         e.preventDefault();
         const newItem = { item };
@@ -12,13 +16,7 @@ const Grocery =  () => {
         giveNewId(newId + 1);
         setList(list);
     }
-    
-    // const handleAdd = (itemName) => {
-    //     newItem = {name:itemName, id:newId}
-    //     const newList = list.push(newItem)
-    //     giveNewId(newId + 1)
-    //     setList(newList)
-    // }
+    // Delete an item
     const handleDelete = (id) => {
         const newList = list.filter(listItem => listItem.id !== id);
         setList(newList);
@@ -28,9 +26,11 @@ const Grocery =  () => {
     <>
     <form onSubmit={handleSubmission}>
         <label>Enter grocery item:</label>
-        <input type="text" value={item}
-            onChange={(e) => typeItem(e.target.value)}/>
-        <button>Add Item</button>
+        <div>
+            <input type="text" value={item}
+                onChange={(e) => typeItem(e.target.value)}/>
+            <button>Add Item</button>
+        </div>
     </form>
 
     <ul className="grocery-list">
