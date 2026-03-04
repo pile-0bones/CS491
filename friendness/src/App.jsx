@@ -45,7 +45,7 @@ function App() {
       </p>
 
       <House name="paradise">
-        <Room name="bedroom"></Room>
+        <Room name="bedroom" housename="paradise"></Room>
       </House>
       
     </>

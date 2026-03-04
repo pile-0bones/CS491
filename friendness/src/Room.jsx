@@ -1,7 +1,7 @@
 import "./App.css"
 const Room = (props) => (
     <>
-        <div>This room is called {props.name}</div>
+        <div>This room in {props.housename} is called {props.name}</div>
     </>
 )
 
